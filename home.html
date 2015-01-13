@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <h1>Status</h1>
+
+    <div class="spinner" ng-if="!parkings.length > 0">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+
+    <ul id="parking-list" ng-if="vrij.length > 0">
+        <h2 class="text-success">VRIJ</h2>
+        <li ng-repeat="p in vrij" class="bs-callout bs-callout-info" data-name="{{p.name}}">
+            <h1 ng-bind="p.description"></h1>
+            <p ng-bind="p.address"></p>
+
+            <h3>
+                <span ng-bind="p.availableCapacity"></span><span>/</span>
+                <span ng-bind="p.totalCapacity"></span>
+            </h3>
+        </li>
+    </ul>
+
+
+    <ul id="parking-list" ng-if="vol.length > 0">
+        <h2 class="text-danger">VOL</h2>
+        <li ng-repeat="p in vol" class="bs-callout bs-callout-info" data-name="{{p.name}}">
+            <h1 ng-bind="p.description"></h1>
+            <p ng-bind="p.address"></p>
+
+            <h3>
+                <span ng-bind="p.availableCapacity"></span><span>/</span>
+                <span ng-bind="p.totalCapacity"></span>
+            </h3>
+        </li>
+    </ul>
+</div>
